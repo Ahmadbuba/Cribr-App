@@ -1,0 +1,109 @@
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.layout {
+  width: 95%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+}
+
+.second_item {
+  width: 300px;
+  margin: 0 auto;
+  background-color: blueviolet;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.first_item {
+  // background-color: red;
+  // margin-left: 0;
+  // display: flex;
+  // align-items: flex-start;
+  // justify-content: flex-start;
+}
+
+.last_item {
+  display: flex;
+  align-items: center;
+}
+
+.second_item button {
+  height: 32px;
+  width: 32px;
+  background-color: #7bcfad;
+  border: 1px solid #000000;
+  border-radius: 50%;
+}
+
+.img {
+  width: 60%;
+  object-fit: cover;
+}
+
+.navigation {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr 50px;
+  // border-top: 2px solid #979797;
+  // border-bottom: 2px solid #979797;
+  // border-top-left-radius: 25px;
+  // border-bottom-left-radius: 25px;
+  // border-left: 1px solid #979797;
+  // border-top-right-radius: 25px;
+  // border-bottom-right-radius: 25px;
+  // border-right: 1px solid #979797;
+}
+
+.nav-item {
+  padding: 8px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.navigation .nav-item:first-child {
+  border-left: 2px solid black;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  border-left: 1px solid #e9ecf1;
+}
+
+.navigation .nav-item:last-child {
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border-right: 1px solid #e9ecf1;
+}
+
+.nav-item_border_right {
+  // border-right: 1px solid red;
+}
+
+.img_search {
+  width: 45%;
+}
+
+.color {
+  // background-color: #7bcfad;
+  // overflow: hidden;
+  // border-top: 2px solid #979797;
+  // border-bottom: 2px solid #979797;
+  // border-top-left-radius: 25px;
+  // border-bottom-left-radius: 25px;
+  // border-left: 1px solid #979797;
+  // border-top-right-radius: 25px;
+  // border-bottom-right-radius: 25px;
+}
+
+a {
+  // padding: 0 30px;
+}
