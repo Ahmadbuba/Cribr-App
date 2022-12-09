@@ -1,109 +1,337 @@
+@import "../../variables";
+
+$primary_btn_color: #7bcfad;
+$gray_border_color: #979797;
+
 .header {
   position: fixed;
   top: 0;
   width: 100%;
   overflow: hidden;
+  font-family: $robotoFont;
+  z-index: 50;
+
+  .layout {
+    width: 100%;
+    @include center(1.5rem);
+    @include flexJustify($centerJustification);
+    .first_item {
+      display: none;
+    }
+    .navigations {
+      border: 2px solid $gray_border_color;
+      box-shadow: 0px 4px 4px 3px rgba(0, 0, 0, 0.25);
+      border-radius: 30px;
+      width: 90%;
+      max-width: 320px;
+      @include center(0);
+
+      ul {
+        list-style: none;
+        @include flexJustify($spaceBetweenJustification);
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 12px;
+        letter-spacing: -0.3px;
+
+        li {
+          flex: 1;
+          padding: 0.3rem 0.2rem;
+          border-right: 1px solid black;
+          text-align: center;
+          display: flex;
+          justify-content: center;
+        }
+
+        li:first-child {
+        }
+
+        li:last-child {
+          flex: none;
+          .btn {
+            background-color: $primary_btn_color;
+            border: 1px solid #000000;
+            border-radius: 50%;
+            padding: 0.5rem;
+            @include flexJustify($centerJustification);
+          }
+          border-right: none;
+        }
+      }
+
+      button {
+        border: none;
+      }
+    }
+
+    .input_holder {
+      width: 90%;
+      max-width: 320px;
+      @include center(0);
+      @include flexJustify($spaceBetweenJustification);
+      gap: 0.3rem;
+      button {
+        background-color: white;
+        border: none;
+        @include flexJustify($centerJustification);
+      }
+      .holder {
+        width: 87%;
+        @include center(0);
+        @include flexJustify($centerJustification);
+        gap: 0.3rem;
+        background-color: #ffffff;
+        border: 0.2px solid #979797;
+        box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+        border-radius: 30px;
+        padding: 0.5rem 0.25rem;
+
+        input {
+          box-sizing: border-box;
+          padding: 0.3rem 0.5rem;
+          width: 87%;
+          border: none;
+        }
+
+        input:focus {
+          outline: none;
+        }
+      }
+
+      .header_top_right_icons {
+        @include flexJustify($spaceBetweenJustification);
+        gap: 0.2rem;
+      }
+    }
+
+    .right-btn-group {
+      display: none;
+    }
+  }
 }
 
-.layout {
-  width: 95%;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+@media (min-width: 450px) {
+  .header {
+    .layout {
+      width: 98%;
+      @include center(1.5rem);
+      @include flexJustify($spaceBetweenJustification);
+
+      .first_item {
+        display: block;
+      }
+      .navigations {
+        border: 2px solid $gray_border_color;
+        box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.25);
+        border-radius: 30px;
+        width: 95%;
+        max-width: 320px;
+        @include center(0);
+      }
+      .right-btn-group {
+        @include flexJustify($spaceBetweenJustification);
+
+        .sell_btn {
+          color: white;
+          padding: 0.9rem 1rem;
+          background-color: $primary_btn_color;
+          border-radius: 70px;
+          border: 2px solid $gray_border_color;
+          box-shadow: 0px 4px 4px 3px rgba(0, 0, 0, 0.25);
+          margin-left: 0.5rem;
+        }
+
+        .other_btns {
+          display: none;
+          //   box-sizing: border-box;
+          //   @include flexJustify($spaceBetweenJustification);
+          //   gap: 0.3rem;
+          //   border: 2px solid $gray_border_color;
+          //   border-radius: 50px;
+          //   padding: 0.3rem 0.5rem;
+          //   button {
+          //     border: none;
+          //   }
+        }
+      }
+    }
+  }
 }
 
-.second_item {
-  width: 300px;
-  margin: 0 auto;
-  background-color: blueviolet;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@media (min-width: 760px) {
+  .header {
+    .layout {
+      .right-btn-group {
+        gap: 1rem;
+        .sell_btn {
+          margin-left: 0;
+          padding: 0.95rem 1.5rem;
+        }
+        .other_btns {
+          box-sizing: border-box;
+          @include flexJustify($spaceBetweenJustification);
+          gap: 0.3rem;
+          border: 2px solid $gray_border_color;
+          border-radius: 50px;
+          padding: 0.3rem 0.5rem;
+          button {
+            border: none;
+          }
+        }
+      }
+    }
+  }
 }
 
-.first_item {
-  // background-color: red;
-  // margin-left: 0;
-  // display: flex;
-  // align-items: flex-start;
-  // justify-content: flex-start;
+@media (min-width: 1000px) {
+  .header {
+    .layout {
+      .right-btn-group {
+        gap: 3rem;
+
+        .other_btns {
+          padding: 0.4rem 0.8rem;
+        }
+      }
+    }
+  }
 }
 
-.last_item {
-  display: flex;
-  align-items: center;
-}
+// .header {
+//   position: fixed;
+//   top: 0;
+//   width: 100%;
+//   overflow: hidden;
+//   font-family: $robotoFont;
+//   z-index: 50;
 
-.second_item button {
-  height: 32px;
-  width: 32px;
-  background-color: #7bcfad;
-  border: 1px solid #000000;
-  border-radius: 50%;
-}
+//   .layout {
+//     width: 90%;
+//     @include center(1rem);
+//     @include flexJustify($spaceBetweenJustification);
 
-.img {
-  width: 60%;
-  object-fit: cover;
-}
+//     .main_holder_medium {
+//       display: none;
+//     }
 
-.navigation {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 2fr 2fr 2fr 50px;
-  // border-top: 2px solid #979797;
-  // border-bottom: 2px solid #979797;
-  // border-top-left-radius: 25px;
-  // border-bottom-left-radius: 25px;
-  // border-left: 1px solid #979797;
-  // border-top-right-radius: 25px;
-  // border-bottom-right-radius: 25px;
-  // border-right: 1px solid #979797;
-}
+//     .main_holder_small {
+//       width: 100%;
+//       @include flexJustify($spaceBetweenJustification);
+//       .input_holder {
+//         background-color: #ffffff;
+//         border-radius: 30px;
+//         border: 0.2px solid $gray_border_color;
+//         width: 85%;
+//         @include center(0);
+//         @include flexJustify($centerJustification);
+//         padding: 0.55rem 0;
+//         box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
 
-.nav-item {
-  padding: 8px 24px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-right: 1px solid black;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
-}
+//         .holder {
+//           width: 90%;
+//           @include center(0);
+//           @include flexJustify($spaceBetweenJustification);
 
-.navigation .nav-item:first-child {
-  border-left: 2px solid black;
-  border-top-left-radius: 25px;
-  border-bottom-left-radius: 25px;
-  border-left: 1px solid #e9ecf1;
-}
+//           input {
+//             box-sizing: border-box;
+//             width: 92%;
+//             padding: 0.4rem 0.25rem;
+//             border: none;
+//           }
 
-.navigation .nav-item:last-child {
-  border-top-right-radius: 25px;
-  border-bottom-right-radius: 25px;
-  border-right: 1px solid #e9ecf1;
-}
+//           input:focus {
+//             outline: none;
+//           }
 
-.nav-item_border_right {
-  // border-right: 1px solid red;
-}
+//           button {
+//             background-color: white;
+//             border: none;
+//             @include flexJustify($centerJustification);
+//           }
+//         }
+//       }
 
-.img_search {
-  width: 45%;
-}
+//       .header_top_right_icons {
+//         @include flexJustify($spaceBetweenJustification);
+//         gap: 0.5rem;
+//       }
+//     }
+//   }
+// }
 
-.color {
-  // background-color: #7bcfad;
-  // overflow: hidden;
-  // border-top: 2px solid #979797;
-  // border-bottom: 2px solid #979797;
-  // border-top-left-radius: 25px;
-  // border-bottom-left-radius: 25px;
-  // border-left: 1px solid #979797;
-  // border-top-right-radius: 25px;
-  // border-bottom-right-radius: 25px;
-}
+// @include tablet {
+//   .layout {
+//     @include flexJustify($spaceBetweenJustification);
 
-a {
-  // padding: 0 30px;
-}
+//     #main_holder_medium {
+//       width: 100%;
+//       @include center(0.7rem);
+//       @include flexJustify($spaceBetweenJustification);
+
+//       .navigations {
+//         border: 2px solid $gray_border_color;
+//         box-shadow: 0px 4px 4px 3px rgba(0, 0, 0, 0.25);
+//         border-radius: 70px;
+//         ul {
+//           list-style: none;
+//           @include flexJustify($spaceBetweenJustification);
+//           font-size: 12px;
+//           font-weight: 700;
+//           line-height: 46px;
+//           letter-spacing: -0.3px;
+//           text-align: center;
+
+//           li {
+//             padding: 0 0.5rem;
+//             border-right: 1px solid black;
+//           }
+
+//           li:last-child {
+//             .btn {
+//               background-color: $primary_btn_color;
+//               border: 1px solid #000000;
+//               border-radius: 50%;
+//               padding: 0.5rem;
+//               @include flexJustify($centerJustification);
+//             }
+//             border-right: none;
+//           }
+//         }
+
+//         button {
+//           border: none;
+//         }
+//       }
+
+//       .right-btn-group {
+//         @include flexJustify($spaceBetweenJustification);
+//         gap: 2rem;
+
+//         .sell_btn {
+//           color: white;
+//           padding: 1.05rem 1.8rem;
+//           background-color: $primary_btn_color;
+//           border-radius: 70px;
+//           border: 2px solid $gray_border_color;
+//           box-shadow: 0px 4px 4px 3px rgba(0, 0, 0, 0.25);
+//         }
+
+//         .other_btns {
+//           box-sizing: border-box;
+//           @include flexJustify($spaceBetweenJustification);
+//           gap: 1rem;
+//           border: 2px solid $gray_border_color;
+//           border-radius: 70px;
+//           padding: 0.4rem 0.9rem;
+//           button {
+//             border: none;
+//           }
+//         }
+//       }
+//     }
+
+//     #main_holder_small {
+//       display: none;
+//     }
+//   }
+// }

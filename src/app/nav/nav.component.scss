@@ -1,0 +1,68 @@
+@import "../../variables";
+.bottomm {
+  height: 80%;
+  width: 90%;
+  left: 50%;
+  bottom: 6%;
+  margin-top: 18px;
+  position: absolute;
+  transform: translate(-50%, 0);
+  background-color: white;
+  opacity: 0.9;
+  font-weight: normal;
+  font-size: 13px;
+  border-radius: 8px;
+  z-index: 99999999;
+  box-sizing: border-box;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+  display: block;
+  text-align: center;
+}
+pointer:hover {
+  cursor: pointer;
+}
+
+i {
+  position: absolute;
+  top: 100%;
+  left: 95%;
+  margin-left: -15px;
+  width: 18px;
+  height: 15px;
+  overflow: hidden;
+}
+
+i::after {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background-color: #eeeeee;
+  box-shadow: 0 0.2px 4px rgba(0, 0, 0, 0.5);
+}
+.nav {
+  width: 90%;
+  @include center(0);
+  .holder {
+    width: 95%;
+    max-width: 550px;
+    @include center(0);
+    @include flexJustify($spaceBetweenJustification);
+
+    button {
+      border: none;
+      background-color: #ffffff;
+      @include flexJustify($centerJustification);
+    }
+  }
+}
+
+@media (min-width: 700px) {
+  .nav {
+    .holder {
+      padding: 1rem;
+    }
+  }
+}

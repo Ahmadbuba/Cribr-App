@@ -11,4 +11,42 @@
   flex-direction: $direction;
 }
 
-$robotoFont: "Roboto", sans-serif; ;
+@mixin center($yAxisMargin) {
+  margin: $yAxisMargin auto;
+}
+
+@mixin mobile {
+  @media (min-width: $mobile) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: $tabs) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (min-width: $laptop) {
+    @content;
+  }
+}
+
+@mixin superLaptop {
+  @media (min-width: $superLaptop) {
+    @content;
+  }
+}
+
+$robotoFont: "Roboto", sans-serif;
+
+$mobile: 430px;
+$tabs: 770px;
+$laptop: 960px;
+$superLaptop: 1300px;
+
+$startJustification: start;
+$centerJustification: center;
+$spaceBetweenJustification: space-between;
+$spaceAroundJustification: space-around;

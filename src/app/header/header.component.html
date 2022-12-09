@@ -1,10 +1,55 @@
 <div class="header">
   <div class="layout">
+    <!-- <div class="first_item" id="logo">
+      <img src="../../assets/images/header/cribr.png" class="img" width="120" />
+    </div> -->
     <div class="first_item">
-      <img src="../../assets/images/cribr.png" class="img" />
+      <img src="../../assets/images/header/cribr.png" class="img" width="120" />
+    </div>
+    <div class="navigations" *ngIf="!show">
+      <ul>
+        <li><a>Off-Campus</a></li>
+        <li><a>Properties</a></li>
+        <li><a>Auctions</a></li>
+        <li>
+          <button class="btn" (click)="onShowHandler()">
+            <img src="../../assets/images/header/search.png" width="10" />
+          </button>
+        </li>
+      </ul>
     </div>
 
-    <!-- <div class="second_item">
+    <div class="input_holder" *ngIf="show">
+      <div class="holder">
+        <input type="text" />
+        <button type="button">
+          <img src="../../assets/images/header/input_search.png" width="15" />
+        </button>
+      </div>
+      <div class="header_top_right_icons" *ngIf="show">
+        <button (click)="onShowHandler()">
+          <img src="../../assets/images/header/x.png" width="20" />
+        </button>
+
+        <button>
+          <img src="../../assets/images/header/filter.png" width="15" />
+        </button>
+      </div>
+    </div>
+    <div class="right-btn-group" id="right-btn-group">
+      <button type="button" class="sell_btn">SELL</button>
+      <div class="other_btns">
+        <button type="button">
+          <img src="../../assets/images/header/hamburger.png" width="25" />
+        </button>
+        <button type="button">
+          <img src="../../assets/images/header/user.png" width="25" />
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="second_item">
       <div class="navigation">
         <div class="nav-item">
           <a class="nav-item_border_right">Off-Campus</a>
@@ -24,5 +69,4 @@
       </div>
     </div>
     <div class="last_item">hi</div> -->
-  </div>
 </div>
