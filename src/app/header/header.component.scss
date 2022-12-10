@@ -62,6 +62,12 @@ $gray_border_color: #979797;
       button {
         border: none;
       }
+
+      .active {
+        text-decoration: underline;
+        text-decoration-style: solid;
+        text-decoration-color: red;
+      }
     }
 
     .input_holder {
