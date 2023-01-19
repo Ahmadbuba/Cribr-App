@@ -11,6 +11,7 @@ import { NavComponent } from './nav/nav.component';
 import { OffCampusComponent } from './off-campus/off-campus.component';
 import { PropertiesComponent } from './properties/properties.component';
 import { AuctionsComponent } from './auctions/auctions.component';
+import { CarouselComponent } from './shared/carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { AuctionsComponent } from './auctions/auctions.component';
     OffCampusComponent,
     PropertiesComponent,
     AuctionsComponent,
+    CarouselComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],

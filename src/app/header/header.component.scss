@@ -4,8 +4,7 @@ $primary_btn_color: #7bcfad;
 $gray_border_color: #979797;
 
 .header {
-  position: fixed;
-  top: 0;
+  box-sizing: border-box;
   width: 100%;
   overflow: hidden;
   font-family: $robotoFont;
@@ -13,46 +12,59 @@ $gray_border_color: #979797;
 
   .layout {
     width: 100%;
-    @include center(1.5rem);
+    @include center(0.8rem);
     @include flexJustify($centerJustification);
     .first_item {
       display: none;
     }
     .navigations {
-      border: 2px solid $gray_border_color;
-      box-shadow: 0px 4px 4px 3px rgba(0, 0, 0, 0.25);
-      border-radius: 30px;
-      width: 90%;
-      max-width: 320px;
+      box-shadow: 0px 4px 4px 3px rgba(0, 0, 0, 0.15);
+      border-radius: 40px;
+      width: 95%;
       @include center(0);
 
       ul {
         list-style: none;
         @include flexJustify($spaceBetweenJustification);
-        font-size: 14px;
+        font-size: clamp(0.25rem, 3vw, 0.8rem);
         font-weight: 700;
         line-height: 12px;
         letter-spacing: -0.3px;
 
         li {
           flex: 1;
-          padding: 0.3rem 0.2rem;
+          padding: 0.4rem 0.3rem;
           border-right: 1px solid black;
           text-align: center;
           display: flex;
           justify-content: center;
+
+          a {
+            text-decoration: none;
+            list-style-type: none;
+            color: #000000;
+          }
+          .active {
+            text-decoration: underline;
+            text-decoration-style: solid;
+            text-decoration-color: red;
+            text-underline-offset: 0.4rem;
+            text-decoration-thickness: 3px;
+          }
         }
 
         li:first-child {
+          padding: 0.4rem 0.9rem;
         }
 
         li:last-child {
           flex: none;
+          padding: 0.4rem 0.8rem;
           .btn {
             background-color: $primary_btn_color;
             border: 1px solid #000000;
             border-radius: 50%;
-            padding: 0.5rem;
+            padding: 0.4rem;
             @include flexJustify($centerJustification);
           }
           border-right: none;
@@ -62,17 +74,11 @@ $gray_border_color: #979797;
       button {
         border: none;
       }
-
-      .active {
-        text-decoration: underline;
-        text-decoration-style: solid;
-        text-decoration-color: red;
-      }
     }
 
     .input_holder {
-      width: 90%;
-      max-width: 320px;
+      width: 95%;
+
       @include center(0);
       @include flexJustify($spaceBetweenJustification);
       gap: 0.3rem;
@@ -119,31 +125,43 @@ $gray_border_color: #979797;
 @media (min-width: 450px) {
   .header {
     .layout {
-      width: 98%;
-      @include center(1.5rem);
+      width: 95%;
+      @include center(0.5rem);
       @include flexJustify($spaceBetweenJustification);
 
       .first_item {
         display: block;
       }
       .navigations {
-        border: 2px solid $gray_border_color;
-        box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.25);
+        box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.15);
         border-radius: 30px;
         width: 95%;
         max-width: 320px;
         @include center(0);
+
+        ul {
+          li {
+            padding: 0.1rem 0.2rem;
+          }
+
+          li:first-child {
+            padding: 0.1rem 0.8rem;
+          }
+          li:last-child {
+            padding: 0.2rem;
+          }
+        }
       }
       .right-btn-group {
         @include flexJustify($spaceBetweenJustification);
 
         .sell_btn {
           color: white;
-          padding: 0.9rem 1rem;
+          padding: 0.7rem 0.8rem;
           background-color: $primary_btn_color;
-          border-radius: 70px;
-          border: 2px solid $gray_border_color;
-          box-shadow: 0px 4px 4px 3px rgba(0, 0, 0, 0.25);
+          border-radius: 40px;
+          border: 1px solid $gray_border_color;
+          box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.15);
           margin-left: 0.5rem;
         }
 
@@ -167,18 +185,31 @@ $gray_border_color: #979797;
 @media (min-width: 760px) {
   .header {
     .layout {
+      .navigations {
+        ul {
+          li {
+            padding: 0.3rem 0.1rem;
+          }
+          li:first-child {
+            padding: 0.3rem 0.5rem;
+          }
+          li:last-child {
+            padding: 0.3rem 0.5rem;
+          }
+        }
+      }
       .right-btn-group {
         gap: 1rem;
         .sell_btn {
           margin-left: 0;
-          padding: 0.95rem 1.5rem;
+          padding: 0.85rem 1.3rem;
         }
         .other_btns {
           box-sizing: border-box;
           @include flexJustify($spaceBetweenJustification);
           gap: 0.3rem;
-          border: 2px solid $gray_border_color;
-          border-radius: 50px;
+          border: 1px solid $gray_border_color;
+          border-radius: 40px;
           padding: 0.3rem 0.5rem;
           button {
             border: none;

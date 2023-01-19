@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { map } from 'rxjs';
 import { Property } from './property.model';
 
 interface PropertyResponse {
@@ -13,9 +14,14 @@ interface PropertyResponse {
   providedIn: 'root',
 })
 export class DataProviderService {
+  propertiesUrl = 'https://cribr.up.railway.app/api/properties/';
   constructor(private http: HttpClient) {}
 
-  getAllProperties(fetchUrl: string) {
-    return this.http.get(fetchUrl);
+  getAllProperties() {
+    return this.http.get<PropertyResponse>(this.propertiesUrl).pipe(
+      map((propertyResponse) => {
+        return propertyResponse.results;
+      })
+    );
   }
 }

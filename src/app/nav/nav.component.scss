@@ -44,7 +44,7 @@ i::after {
 }
 .nav {
   width: 90%;
-  @include center(0);
+  @include center(1rem);
   .holder {
     width: 95%;
     max-width: 550px;
@@ -62,7 +62,7 @@ i::after {
 @media (min-width: 700px) {
   .nav {
     .holder {
-      padding: 1rem;
+      //padding: 1rem;
     }
   }
 }

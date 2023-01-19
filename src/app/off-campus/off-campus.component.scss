@@ -1,0 +1,123 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h3 {
+  color: #a9a9a9;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 0.9rem;
+  letter-spacing: -0.3px;
+  padding-top: 1rem;
+  font-family: "Roboto", sans-serif;
+  // Roboto
+}
+
+h5 {
+  color: #3a3b3c;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 15.23px;
+  letter-spacing: -0.3px;
+  font-family: "Roboto", sans-serif;
+  // Roboto
+}
+
+span {
+  color: #ff5a60;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: -0.3px;
+  font-family: "Roboto", sans-serif;
+  // Roboto
+}
+
+h6 {
+  color: #3a3b3c;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 17.57px;
+  letter-spacing: -0.3px;
+  font-family: "Merriweather", sans-serif;
+  // Droid Sans
+}
+
+#display-main {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.display {
+  width: 95%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.card {
+  // border: 2px solid aqua;
+  height: 48vh;
+  margin-bottom: 1rem;
+}
+
+.card-content {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.4rem;
+}
+
+.flex-small {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.per-year-holder {
+  padding: 2px 6px;
+  border-radius: 10px;
+  background-color: #385f78;
+  color: white;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 11.6667px;
+  line-height: 14px;
+  letter-spacing: -0.233333px;
+  font-family: "Roboto", sans-serif;
+}
+
+@media (min-width: 480px) {
+  .display {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .display {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .display {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+}
